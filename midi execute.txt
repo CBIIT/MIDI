@@ -1,0 +1,2 @@
+gcsfuse --implicit-dirs 21patients_10-19 /home/gustafss/midi_app/input/21_patient
+java -classpath "midi-analysis.jar" gov.nih.nci.midi.RunProcess  buckettest3 midi /home/gustafss/midi_app/input/21_patient none /home/gustafss/midi_app/output

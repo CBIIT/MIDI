@@ -1,0 +1,4 @@
+mvn dependency:copy-dependencies
+gov.nih.nci.midi.App
+mvn -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true compile
+mvn clean compile assembly:single
