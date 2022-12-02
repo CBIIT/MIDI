@@ -9,10 +9,10 @@
 package gov.nih.nci.midi;
 
 import java.util.Map;
-import org.apache.log4j.Logger;
+
 
 public abstract class DomainOperation {
-	Logger log = Logger.getLogger(DomainOperation.class);
+
 	
 	/**
 	 * The name of this method is a little bit mystifying.... it does far more than

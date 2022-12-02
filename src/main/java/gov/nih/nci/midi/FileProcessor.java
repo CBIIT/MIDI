@@ -5,7 +5,6 @@ import java.util.*;
 //import org.hibernate.SQLQuery;
 //import org.springframework.transaction.annotation.Propagation;
 //import org.springframework.transaction.annotation.Transactional;
-import org.apache.log4j.Logger;
 import java.io.*;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
