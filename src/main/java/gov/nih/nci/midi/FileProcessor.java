@@ -27,7 +27,12 @@ public class FileProcessor extends DomainOperation implements FileProcessorInter
     private Map<String, String> crossWalkHash;
     private String outputDirectory;
     private CSVPrinter printer;
-    private Map<String, Integer>sequenceMap=new HashMap<String, Integer>(); 
+    private Map<String, Integer>sequenceMap=new HashMap<String, Integer>();
+    private String tagSequence;
+    private String tagNameSequence;
+    private String previousTag;
+    private String previousTagName;
+    private boolean inSequence;
 	public String getRun() {
 		return run;
 	}
@@ -109,12 +114,12 @@ public class FileProcessor extends DomainOperation implements FileProcessorInter
 						}
 						for (DicomTagDTO tag : tags)
 						{
-							if (tag.getData()!=null&&(tag.getData().length()>1))
-							{
+			//				if (tag.getData()!=null&&(tag.getData().length()>1))
+			//				{
 								   //insertTagToDB(tag.getName(), tag.getElement(),  tag.getData(), uid, dicomFile.getAbsolutePath());
 								printRecord(tag.getName(), tag.getElement(), tag.getData(), dicomFile.getAbsolutePath(), uid, originalUID);
 								
-		 					}
+		 	//				}
 						}
 						
 					}
@@ -176,11 +181,30 @@ public class FileProcessor extends DomainOperation implements FileProcessorInter
 	
     private void printRecord(String tagName, String tag, String tagValue, String fileName, String instanceUID, String orginalUID){
 		try {
+//			System.out.println("tag-"+tag+"-"+tagValue);
 			if ((tag==null)||(tag.isEmpty())) {
 				return;
 			}
-		//	System.out.println("printing record"+"-tagName-"+ tagName +"-tag-"+ tag +"-tagValue-"+ tagValue +"-fileName-"+ fileName +"-instanceUID-"+ instanceUID +"-orginalUID-"+ orginalUID);
+//			System.out.println();
+//			System.out.println("printing record"+"-tagName-"+ tagName +"-tag-"+ tag +"-tagValue-"+ tagValue +"-fileName-"+ fileName +"-instanceUID-"+ instanceUID +"-orginalUID-"+ orginalUID);
+			if (tag.startsWith(">")) {
+				if (inSequence) {
+					tag=tagSequence+"-"+tag;
+					tagName=tagNameSequence+"-"+tagName;
+				} else {
+					tagSequence=previousTag;
+					tagNameSequence=previousTagName;
+					tag=tagSequence+"-"+tag;
+					tagName=tagNameSequence+"-"+tagName;
+					inSequence=true;
+				}
+			} else {
+				inSequence=false;
+				previousTag=tag;
+				previousTagName=tagName;
+			}
 			int sequence=getTagSequence(tag);
+			
 			printer.printRecord(run,component,fileName,tag,tagName,tagValue,sequence, instanceUID, instanceUID);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
