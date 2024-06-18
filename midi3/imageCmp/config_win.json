@@ -1,0 +1,7 @@
+{
+    "pre_processed_file_path": "C:\\workspace_midi3\\data\\23PatOld",
+    "post_processed_file_path": "C:\\workspace_midi3\\data\\23PatNew",
+    "id_map_csv_file": "C:\\workspace_midi3\\data\\sc2023-07-31-ds1_1-23-2023-08-01.csv",
+    "output_pdf_path": "C:\\workspace_midi3\\imageCmp\\output\\comparison_results_23Pats.pdf",
+    "log_directory": "C:\\workspace_midi3\\imageCmp\\log"
+}
