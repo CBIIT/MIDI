@@ -1,0 +1,12 @@
+select * from `nih-nci-cbiit-midi-dev2.comparisonscript.midi-tcia_source` 
+where original_instance_uid in (
+select original_instance_uid
+from `nih-nci-cbiit-midi-dev2.comparisonscript.midi-tcia_source` 
+where original_instance_uid in
+(SELECT original_instance_uid 
+FROM `nih-nci-cbiit-midi-dev2.comparisonscript.midi-tcia_source` 
+where tag='(0010,0020)'
+group by original_instance_uid,
+         tag
+having count(*)>1)
+group by original_instance_uid)

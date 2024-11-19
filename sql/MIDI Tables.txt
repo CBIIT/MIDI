@@ -1,0 +1,69 @@
+CREATE TABLE `nih-nci-cbiit-midi-dev2.comparisonscript.midi-tcia_ctp`
+(
+  run STRING,
+  component STRING,
+  filename STRING,
+  tag STRING,
+  tagname STRING,
+  value STRING,
+  sequence_number STRING,
+  original_instance_uid STRING,
+  updated_instance_uid STRING,
+  in_curated_doc STRING
+);
+
+CREATE TABLE `nih-nci-cbiit-midi-dev2.comparisonscript.midi-tcia_source`
+(
+  run STRING,
+  component STRING,
+  filename STRING,
+  tag STRING,
+  tagname STRING,
+  value STRING,
+  sequence_number STRING,
+  original_instance_uid STRING,
+  updated_instance_uid STRING,
+  in_curated_doc STRING
+);
+
+	
+CREATE TABLE `nih-nci-cbiit-midi-dev2.comparisonscript.tcia-tcia_source`
+(
+  run STRING,
+  component STRING,
+  filename STRING,
+  tag STRING,
+  tagname STRING,
+  value STRING,
+  sequence_number STRING,
+  original_instance_uid STRING,
+  updated_instance_uid STRING,
+  in_curated_doc STRING
+);
+
+CREATE TABLE `nih-nci-cbiit-midi-dev2.comparisonscript.tcia-tcia_ctp`
+(
+  run STRING,
+  component STRING,
+  filename STRING,
+  tag STRING,
+  tagname STRING,
+  value STRING,
+  sequence_number STRING,
+  original_instance_uid STRING,
+  updated_instance_uid STRING,
+  in_curated_doc STRING
+);
+
+CREATE TABLE `nih-nci-cbiit-midi-dev2.comparisonscript.tcia-tcia_data`
+(
+  run STRING,
+  component STRING,
+  filename STRING,
+  tag STRING,
+  tagname STRING,
+  value STRING,
+  sequence_number STRING,
+  original_instance_uid STRING,
+  updated_instance_uid STRING
+);
