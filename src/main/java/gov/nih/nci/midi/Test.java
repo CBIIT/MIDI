@@ -9,7 +9,7 @@ public class Test {
 	    System.exit(1);
       } 
           RunProcess process=new RunProcess();
-          process.processMidi(args[0], args[1], args[2], args[3], args[4]);
+          //process.processMidi(args[0], args[1], args[2], args[3], args[4]);
 	
 
     }

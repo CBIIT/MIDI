@@ -1,20 +1,16 @@
 package gov.nih.nci.midi;
 
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.ApplicationContext;
-import org.springframework.beans.factory.annotation.Autowired;
+
 public class RunProcess {
 
-	@Autowired
-	private FileProcessorInterface instance;
 
-	public void processMidi(String run, String component, String path, String crossWalkFile, String outputDirectory) {
-        ApplicationContext context 
-        = new ClassPathXmlApplicationContext(
-          "applicationContext.xml");
-        FileProcessorInterface instance= (FileProcessorInterface) context.getBean("FileProcessor");
-        instance.processMidi(run, component, path, crossWalkFile, outputDirectory);
+
+
+	public void processMidi(String run, String component, String path, String crossWalkFile, String outputDirectory, String projectName, String zipFileName, String outputBucket) {
+
+        FileProcessor instance= new FileProcessor();
+        instance.processMidi(run, component, path, crossWalkFile, outputDirectory, projectName, zipFileName, outputBucket);
 	}
 	
     public static void main(String[] args) {
@@ -26,7 +22,11 @@ public class RunProcess {
     	} 
 
         FileProcessor instance= new FileProcessor();
-        instance.processMidi(args[0], args[1], args[2], args[3], args[4]); 
+        if (args.length==5) {
+        	instance.processMidi(args[0], args[1], args[2], args[3], args[4], null, null, null); 
+        } else {
+            instance.processMidi(args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7]); 
+        }
 
 	
 
