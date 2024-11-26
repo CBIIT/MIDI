@@ -1,7 +1,0 @@
-{
-    "pre_processed_file_path": "/home/panq/data/original_data/ds1_1-23",
-    "post_processed_file_path": "/home/panq/data/deid_23_patients/sc2023-07-31-ds1_1-23-2024-06-06/data_input",
-    "id_map_csv_file": "/home/panq/data/deid_23_patients/mapping_files/sc2023-07-31-ds1_1-23-2024-06-06.csv",
-    "output_pdf_path": "/home/panq/DICOMImgCmp/output/comparison_results_23Pats.pdf",
-    "log_directory": "/home/panq/DICOMImgCmp/log"
-}

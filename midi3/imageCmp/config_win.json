@@ -1,9 +1,0 @@
-{
-	"run_name": "midi_raw",
-    "input_data_path": "C:\\data\\midi_raw\\data_input\\raw10-30-24",
-    "uid_mapping_file": "C:\\data\\midi_raw\\mapping_file\\raw10-30-24_uids\\raw_uids.csv",
-    "output_data_path": "C:\\DICOMImgCmp\\output_multi",
-    "log_path": "C:\\DICOMImgCmp\\log_multi",
-    "thread_count": "5",
-	"pre_deID_data_path": "C:\\data\\tcia_raw\\data_input\\raw_dataset_uncompressed"
-}
