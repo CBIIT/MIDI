@@ -593,7 +593,7 @@ def main(config_file):
     run_name = config['run_name']
     
     output_pdf = os.path.join(output_pdf, run_name)
-    thread_count = int(config['thread_count'])
+    thread_count = int(config['multiprocessing_cpus'])
 
     log_directory = config['log_path']
     os.makedirs(log_directory, exist_ok=True)

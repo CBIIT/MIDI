@@ -18,7 +18,7 @@ The configuration file must contain the following information, please refer to t
 |"uid_mapping_file"     | path to the UID mapping file|both|
 |"log_path"             | path to the logs|both|
 |"pre_deID_data_path" 	| path to the source data (pre de-identification)|both|
-|"thread_count"         | The number of threads used to run the program |run_DICOMImgCmp_multiT.py| 
+|"multiprocessing_cpus" | The number of threads used to run the program |run_DICOMImgCmp_multiT.py| 
 
 
 ## Execution from the command line
