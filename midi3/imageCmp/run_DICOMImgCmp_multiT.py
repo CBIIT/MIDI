@@ -592,7 +592,6 @@ def main(config_file):
     output_pdf = config['output_data_path']
     run_name = config['run_name']
     
-    os.path.join(os.path.dirname(original_path), additional_directory, os.path.basename(original_path))
     output_pdf = os.path.join(output_pdf, run_name)
     thread_count = int(config['thread_count'])
 
